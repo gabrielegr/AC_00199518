@@ -1,4 +1,4 @@
-org    200h
+	org    200h
 
 	section    .text
 
