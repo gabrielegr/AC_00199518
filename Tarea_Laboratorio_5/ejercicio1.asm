@@ -56,7 +56,7 @@ org 100h
 
     videomode: 
         MOV AH, 00h  
-        MOV AL, 00h  
+        MOV AL, 03h  
         INT 10h
         RET
 
