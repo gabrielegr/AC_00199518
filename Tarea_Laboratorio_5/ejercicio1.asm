@@ -1,24 +1,29 @@
 org 100h
 
+    section .data
+
+    name DB 'Gabriel Enrique Gonzalez Rodriguez'
+
     section .text
 
-    xor AX, AX
-    xor SI, SI
-    xor BX, BX
+    
+    XOR SI, SI
+    XOR DI, DI
+    XOR AH, AH
+    XOR AL, AL
+    XOR BH, BH
+    XOR BL, BL
     XOR CX, CX
-    xor DX, DX
+    XOR DH, DH
+    XOR DL, DL
     XOR CL, CL
-    MOV SI, 0
-    MOV DI, 0
-    MOV DH, 2
     MOV DL, 4
-    MOV byte[200h], 4
-    MOV byte[201h], 6
-    MOV byte[202h], 8
+   
 
     call videomode
 
     firstname: 
+        MOV DH, 2
         call writechar
         CMP SI, 8 
         JB firstname
@@ -27,7 +32,7 @@ org 100h
 
 
     secondname:
-        MOV DH, [200h] 
+        MOV DH, 4 
         call writechar
         CMP SI,8 
         JB secondname
@@ -36,7 +41,7 @@ org 100h
 
 
     firstlastname:
-        MOV DH, [201h] 
+        MOV DH, 6 
         call writechar
         CMP SI,9 
         JB firstlastname
@@ -44,7 +49,7 @@ org 100h
         jmp secondlastname
 
     secondlastname:
-        MOV DH, [202h] 
+        MOV DH, 8 
         call writechar
         CMP SI,10  
         JB secondlastname
@@ -80,6 +85,4 @@ org 100h
         MOV DL,4
         RET    
 
-    section .data
-
-    name DB 'Gabriel Enrique Gonzalez Rodriguez'
+    
