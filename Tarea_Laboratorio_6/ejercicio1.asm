@@ -49,7 +49,6 @@ EscribirCadena:
 Comparar:
 		xor     SI, SI 
 whileCompare:		
-		call    EsperarTecla  
 		mov 	AL, [BP+SI]
         cmp     [pass+SI], AL        
         jne     Escribirincorrecto              
